@@ -1,24 +1,57 @@
-\documentclass[extrafontsizes, 30pt]{memoir}
+\documentclass[12pt]{report}
+%\documentclass[extrafontsizes, 20pt]{memoir}
 \pagenumbering{gobble}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{color}
-\usepackage{geometry}
+\usepackage[margin=0.1in]{geometry}
 \geometry{a2paper}
 \begin{document}
 %\color{white}
-The mass flux shown in figure 1 results, in the simulation of a
-superbubble shown in figure 2, an additional mass loading due to evaporated shell of
-approximately 6 times the star cluster mass, and more than 20 times the mass of
-the SN ejecta.
 
-This additional mass drops the bubble temperature by more than an
-order of magnitude.  Increased density and decreased temperature means that
-this bubble will radiate away its energy more efficiently than an equivalent
-shell simulated without conduction.
+\huge
+We performed very high resolution simulations of the interface between
+hot and cold gas with conduction.  The initial condition is in
+pressure equilibrium with a cold medium (1 atom/cc, $10^4$ K) adjacent
+to a hot one (0.01 atom/cc, $10^6$ K).  Without conduction nothing
+occurs.  The results with conduction are shown in figure 2.  The left
+panel clearly shows that the primary effect of conduction is to create
+a steady mass flux into the hot medium.  Conduction adds heat to colder
+gas as it joins the hot phase so that there is very little net energy
+transport out of the hot medium (as is commonly assumed in analytical estimates
+such as Weaver et al. 1977).  The thinness of these interfaces means
+that the net energy loss, due to cooling, is fairly small.  Thus, in
+larger scale simulations, the key effect is adding mass to the hot
+bubble.
 
-The fragmentation of due to Vishniac instabilites in the thin shell
-shown in figure 5 are artificially supressed in simulations that lack
-thermal conduction. These are the first SPH simulations to show the growth of
-Vishniac instabilities in a feedback-driven superbubble.
+Figure 3 shows the radial temperature distribution in a superbubble
+created by a 30,000 solar mass star cluster with constant energy
+output at $3 \times 10^{38}$ erg/s at 30 Myr.  This matches one of the
+cases treated in Silich et al (1996).  As shown, conduction reduces
+the average bubble temperature to $10^6$ K from $2\times 10^7$ K.
+Figure 4 shows the bubble mass (defined by gas exceeding $10^5$ K).
+With the addition of conduction, additional mass added by evaporation
+closely tracks the mass ejected by stellar feedback with a mass
+loading factor of roughly 20.  At 30 Myr the total hot bubble mass is
+approximately 6 times the initial star cluster mass.  This mass
+loading is in agreement with the results of Silich et
+al. (1996), as shown in figure 5.  We have demonstrated that the total bubble mass 
+depends only on the energy injected and is insensitive to the mass injected by feedback.
+
+This additional mass decreased the bubble temperature by more than an order of
+magnitude (as shown in figure 3).  Increased density and decreased temperature
+meant that this bubble radiated away its energy more efficiently than an
+equivalent shell simulated without conduction, leading to a smaller bubble radius.
+
+Structure forms in the cold shell due to the Vishniac instability as
+shown in figure 6.  These are the first SPH simulations to show the
+growth of Vishniac instabilities in a feedback-driven superbubble.
+The role of Vishniac instabilities may be sensitive to the state of
+the ambient medium (see McLeod \& Whitworth 2013).  Mass loading
+through evaporation, in principle, depends on the surface area of the
+shell and other factors such as clumpiness (as discussed in Silich et
+al. 1996).  However, the self regulating nature of conduction tends to
+make the total bubble mass relatively insensitive to these factors.
+
 \end{document}
+

@@ -1,4 +1,5 @@
-\documentclass[extrafontsizes, 30pt]{memoir}
+\documentclass[12pt]{report}
+%\documentclass[extrafontsizes, 20pt]{memoir}
 \pagenumbering{gobble}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
@@ -7,20 +8,32 @@
 \geometry{a2paper}
 \begin{document}
 %\color{white}
-Models of stellar feedback suffer from uncertainty as to how much mass is
-swept up into these hot regions from the surrounding ISM.  As this
-determines both the temperature and the density within feedback-driven
-superbubbles, it therefore determines how long their thermal energy persists
-before being lost to radiative cooling. 
+\Huge
+Stellar feedback is critical to the
+evolution of galaxies.  Galaxy simulations without feedback fail to
+reproduce observed galaxies on even basic metrics such as star formation rates and rotation
+curves.  Recent work has shown that many standard feedback recipes appear to be too weak and lead to galaxies with far too many baryons, primarily in the form of stars (Scannapieco et al. 2012). 
 
-Dalla Vecchia \& Schaye 2012 propose a stochastic feedback model that relies on
-a constant temperature for feedback bubbles.  Mass-loading from conductive
-evaporation may constrain the temperatures in physical superbubbles, and
-therefore put a limit on models such as this.
+Thacker \& Couchmann (2000) demonstrated that how much  
+mass the energy released by stellar feedback is deposited into can significantly
+change how rapidly that energy is lost to radiative cooling.  Dalla Vecchia \& Schaye (2012) 
+recently implemented a stochastic model that effectively select the temperature of the hot feedback gas by 
+tightly controlling mass receiving feedback.  They demonstrate the target temperature selected this dramatically affects galactic outflows.  These studies raise the question of what sets this critical temperature.
 
-Previous studies of wind and supernova driven superbubbles (Chevalier 1974, Mac Low
-\& McCray 1988, etc.) include thermal conduction as a key component.
+Studies of wind and supernova driven superbubbles (Chevalier 1974, Weaver et al. 1977, Mac Low
+\& McCray 1988, Silich et al. 1996) consistently include thermal conduction as a key component.  A
+schematic diagram of how a star clusters produce a hot feedback bubble is shown in figure 1.
+Unlike individual supernovae, superbubbles rapidly form a cold shell and preserve a higher fraction
+of the injected energy.  The primary role of conduction is to evaporate the cold outer shell and add mass to the hot bubble.
+We have explored this process with extremely high resolution SPH and AMR simulations.
 
-We show, using the SPH code GASOLINE, that the thermal conduction is the process
-that determines the mass and temperature within a feedback-heated region.
+Models of stellar feedback suffer from uncertainty as to how much mass
+is swept up into these hot regions from the surrounding ISM.  We have
+performed a suite of simulations using the SPH code GASOLINE (Wadsley
+et al. 2004) incorporating the effects of the thermal conduction.  In
+the following sections we show how conduction regulates the
+temperature and hot gas mass in superbubbles associated with young
+star clusters.  This, in turn, strongly affects how stellar feedback
+acts to regulate star formation and outflows on galactic scales.
+
 \end{document}

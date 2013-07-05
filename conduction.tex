@@ -1,27 +1,34 @@
-\documentclass[extrafontsizes, 30pt]{memoir}
+\documentclass[12pt]{report}
+%\documentclass[extrafontsizes, 20pt]{memoir}
 \pagenumbering{gobble}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{color}
 \usepackage{geometry}
 \geometry{a2paper}
-\DeclareMathSizes{30}{30}{30}{30}
+\DeclareMathSizes{25}{25}{25}{25}
 \begin{document}
 %\color{white}
-The flow of heat per unit volume from the hot interior to the shell is
-governed by the simple equation (Weaver et al 1977):
-$$\frac{dE}{dt} = \nabla\cdot (\kappa \nabla T)$$
-As the thermal conduction coefficient $\kappa$ strongly depends on the
-temperature:
-$$\kappa = (6\times10^{-7}  \mathrm{erg s^{-1} cm^{-1} K^{-2/7}})T^{5/2}$$
-This heat flux ultimately manifests as a mass flux where the shell evaporates
-into the bubble at a rate:
-$$\dot M = \frac{4}{25}\frac{\kappa}{k_B} T^{5/2}\frac{4\pi}{R}$$
-Thermal conduction acts as a strong self-limiting process on the temperature
-of the hot bubble, and ultimately fixes the temperature of the bubble interior.
+\Huge
+The change in energy per unit volume due to thermal conduction by electrons is
+governed by the simple equation,
+$$\frac{dE}{dt} = \nabla\cdot (\kappa \nabla T)$$.
+The thermal conduction coefficient, $\kappa$, strongly depends on the
+temperature,
+$$\kappa = (6\times10^{-7}  \mathrm{erg s^{-1} cm^{-1} K^{-7/2}})\ T^{5/2}$$.
+This heat flux ultimately manifests as a mass flux whereby cold gas evaporates
+into the hot gas at a rate (Weaver et al 1977),
+$$F_{MASS} = \frac{16 \pi\, \mu \kappa}{25\,k_B}\ \frac{T^{5/2}}{R}$$.
+Here $R$ is the radius of the hot bubble.  At high temperatures conduction saturates
+with a heat flux given by the electron speed times their density.  
+Thermal conduction is a self-limiting process.  This regulates
+the temperature of the bubble interior.
 
-Numerical simulations of conduction must take care to ensure that timestep
-criteria are defined as to integrate these equations stably (Jubelgas et al.).
-We limit the heat flux due to conduction such that it never requires timesteps
-shorter than a fixed fraction of the Courant time.
+Numerical simulations with conduction must take care to ensure that timestep
+criteria are defined so as to integrate these equations stably (Jubelgas et al.
+2004).  In practice, saturation limits the heat flux due to conduction such that it never requires
+timesteps shorter than a fixed fraction of the Courant time.
+
+For the tests shown here we inject energy and mass at a fixed rate so as to compare with established results.  In SPH this was implemented through particle creation at regular intervals at the site of the star cluster.
+
 \end{document}
