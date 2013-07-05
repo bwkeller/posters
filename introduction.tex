@@ -1,22 +1,26 @@
-\documentclass{report}
+\documentclass[extrafontsizes, 30pt]{memoir}
+\pagenumbering{gobble}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{color}
 \usepackage{geometry}
 \geometry{a2paper}
 \begin{document}
-\fontsize{30pt}{1em}\selectfont
 %\color{white}
-\begin{itemize}
-	\setlength{\itemindent}{0em}
-	\item Models of stellar feedback suffer from uncertainty as to how much mass is
-	swept up into these hot regions from the surrounding ISM.  As this
-	determines both the temperature and the density within feedback-driven
-	superbubbles, it therefore determines how long their thermal energy persists
-	before being lost to radiative cooling.
-	\item Previous studies of wind and supernova driven superbubbles (Chevalier 1974, Mac Low
-	\& McCray 1988, etc.) include thermal conduction as a key component.
-	\item We show, using the SPH code GASOLINE, that the thermal conduction is the process that determines the mass
-	and temperature within a feedback-heated region.
-\end{itemize}
+Models of stellar feedback suffer from uncertainty as to how much mass is
+swept up into these hot regions from the surrounding ISM.  As this
+determines both the temperature and the density within feedback-driven
+superbubbles, it therefore determines how long their thermal energy persists
+before being lost to radiative cooling. 
+
+Dalla Vecchia \& Schaye 2012 propose a stochastic feedback model that relies on
+a constant temperature for feedback bubbles.  Mass-loading from conductive
+evaporation may constrain the temperatures in physical superbubbles, and
+therefore put a limit on models such as this.
+
+Previous studies of wind and supernova driven superbubbles (Chevalier 1974, Mac Low
+\& McCray 1988, etc.) include thermal conduction as a key component.
+
+We show, using the SPH code GASOLINE, that the thermal conduction is the process
+that determines the mass and temperature within a feedback-heated region.
 \end{document}

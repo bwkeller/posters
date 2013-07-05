@@ -5,13 +5,12 @@
 \usepackage{color}
 \usepackage{geometry}
 \geometry{a2paper}
-\DeclareMathSizes{30}{50}{30}{30}
+\DeclareMathSizes{30}{30}{30}{30}
 \begin{document}
-%\fontsize{30pt}{1em}\selectfont
 %\color{white}
-The flow of heat from the hot interior to the shell is
-governed by the simple equation:
-$$\vec j = \nabla (\kappa T)$$
+The flow of heat per unit volume from the hot interior to the shell is
+governed by the simple equation (Weaver et al 1977):
+$$\frac{dE}{dt} = \nabla\cdot (\kappa \nabla T)$$
 As the thermal conduction coefficient $\kappa$ strongly depends on the
 temperature:
 $$\kappa = (6\times10^{-7}  \mathrm{erg s^{-1} cm^{-1} K^{-2/7}})T^{5/2}$$
@@ -22,5 +21,7 @@ Thermal conduction acts as a strong self-limiting process on the temperature
 of the hot bubble, and ultimately fixes the temperature of the bubble interior.
 
 Numerical simulations of conduction must take care to ensure that timestep
-criteria are defined as to integrate these equations stably.
+criteria are defined as to integrate these equations stably (Jubelgas et al.).
+We limit the heat flux due to conduction such that it never requires timesteps
+shorter than a fixed fraction of the Courant time.
 \end{document}
